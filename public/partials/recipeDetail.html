@@ -1,0 +1,30 @@
+<style>
+.hidden { display: none;}
+.shown { display: inline;}
+</style>
+
+<div>
+  <h1 ng-bind-html-unsafe="recipe.name"></h1>
+
+  <h2>
+    <a id="star" ng-click="unstar()" ng-class="{true: 'shown', false: 'hidden'}[recipe.isStarred]"><span class="glyphicon glyphicon-star"></span></a>
+
+    <a id="unstar" ng-click="star()" ng-class="{true: 'hidden', false: 'shown'}[recipe.isStarred]"><span class="glyphicon glyphicon-star" style="opacity: 0.25"></span></a>
+    
+ </h2>
+
+  <h2>Date</h2>
+  <p><span ng-bind-html-unsafe="recipe.date"></span></p>
+  
+  <h2>Feelings</h2>
+  <p><span ng-bind-html-unsafe="recipe.directions"></span></p>
+  
+  <h2>Shared With:</h2>
+  <p><span ng-bind-html-unsafe="recipe.notes"></span></p>
+  
+  <h2 >Picture</h2>
+  <p><span  ng-bind-html-unsafe="recipe.picture"></span></p>
+
+  <button ng-click="edit()" type="button" class="btn btn-primary">Edit</button>
+
+</div>

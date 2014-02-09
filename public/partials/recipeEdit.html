@@ -1,0 +1,35 @@
+<form class="form-horizontal" role="form">
+
+  <div class="form-group">
+    <label for="nameTextt">Event Name</label>
+    <input ng-model="recipe.name" type="text" id="nameText" class="form-control" placeholder="Event Name">
+  </div>
+  
+  <div class="form-group">
+    <label for="dateText">Date</label>
+    <input ng-model="recipe.date" type="text" id="dateText" class="form-control" placeholder="Date of Event mm/dd/yy">
+  </div>
+
+  <div class="form-group">
+    <label for="feelingText">Feelings</label> 
+    <textarea ng-model="recipe.directions" id="ingText" class="form-control" rows="3" placeholder="How did you feel about this event?"></textarea>
+  </div>
+  
+  <div class="form-group">
+    <label for="sharedWithText">Shared With:</label> 
+    <textarea ng-model="recipe.notes" id=notesText" class="form-control" rows="1" placeholder="Who did you share it with?"></textarea>
+  </div>
+  
+   <input type="file" ng-file-select="onImageSelect($files)">
+                                <br />
+   <img ng-show="dataUrls['image']" ng-src="{{dataUrls['image']}}">
+ 
+
+  <div class="form-group">
+      <button ng-click="submit()" type="button" class="btn btn-primary">Save</button>
+  </div>
+
+  <p ng-bind="errorMsg"></p>
+  <p>ID: {{recipe.key}}<p/>
+
+</form>
